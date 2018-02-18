@@ -1,7 +1,8 @@
 import tweepy
 import json
+import requests
 from bittrex.bittrex import Bittrex
-import parseData
+import bittrexAPI as btx
 
 
 consumer_key = '1Z0mxhdSBmRoS6FPE04VRKxGt'
@@ -19,14 +20,4 @@ api = tweepy.API(auth)
 # 	print("\n")
 
 # Bittrex
-# def prettyPrint(marketDict):
-# 	for i in marketDict:
-# 		print (i["MarketCurrencyLong"] + " | " + str(i["MinTradeSize"]))
-
-apiKey = "495c5ae77cc84f8aa461f2cfa7400f64"
-my_bittrex = Bittrex(None, None)  # or defaulting to v1.1 as Bittrex(None, None)
-marketDic = my_bittrex.get_markets()
-res = marketDic["result"]
-
-prettyPrint(res)
-
+btx.getMarket()
