@@ -21,8 +21,4 @@ api = tweepy.API(auth)
 
 # Bittrex
 
-URL = "https://bittrex.com/api/v1.1/public/getmarkets"
-resOb = requests.get(url = URL)
-resDict = resOb.json()
-res = resDict["result"]
-prettyPrint(res)
+btx.getBalances()
