@@ -20,4 +20,9 @@ api = tweepy.API(auth)
 # 	print("\n")
 
 # Bittrex
-btx.getMarket()
+
+URL = "https://bittrex.com/api/v1.1/public/getmarkets"
+resOb = requests.get(url = URL)
+resDict = resOb.json()
+res = resDict["result"]
+prettyPrint(res)
